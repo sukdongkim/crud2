@@ -289,7 +289,7 @@ public class PizzaMenuController {
 
 	    @FXML
 	    void onClickb4(ActionEvent event) throws IOException {
-	      	main.stopPizzaMenuView();
+	      	Main.stopstageView();
 	      	main.showMainView();
 			try {
 				AnchorPane root = FXMLLoader.load(getClass().getResource("../view/PizzaMain.fxml"));

@@ -322,7 +322,7 @@ Main main= new Main();
     }
 	@FXML
 	void onClickClear(ActionEvent event) {
-      	main.stopCheckView();
+      	main.stopstageView();
       	main.showMainView();
 		try {
 			AnchorPane root = FXMLLoader.load(getClass().getResource("../view/CafeMain.fxml"));

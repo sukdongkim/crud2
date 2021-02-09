@@ -2,10 +2,8 @@ package phone;
 	
 import java.io.IOException;
 
-import phone.Main;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -14,11 +12,9 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 	private static Stage primaryStage;
+	public static Stage stage;
 	public static BorderPane mainLayout;
 	
-	public static Stage checkStage;
-	public static Stage orderStage;
-	public static Stage checkDialogStage;
 	public static String sw = "off";
 	public static String position = null;
 	public static String t_name;
@@ -48,8 +44,7 @@ public class Main extends Application {
 			e.printStackTrace();
 		}		
 	}
-	
-	
+		
 	public void showMainItems() {
 		try {
 			AnchorPane root = FXMLLoader.load(getClass().getResource("view/MainItem.fxml"));
@@ -63,40 +58,37 @@ public class Main extends Application {
 		primaryStage.close();
 	}
 	
-	public void stopOrderView() {
-		orderStage.close();
+	public static void stopstageView() {
+		stage.close();
 	}
+
 	public static void showCheckView() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("view/CafeView.fxml"));
 		AnchorPane checkView = loader.load();
 
-		checkStage = new Stage();
-		checkStage.setTitle("통계 화면");
-		checkStage.initModality(Modality.WINDOW_MODAL);
-		checkStage.initOwner(primaryStage);
+		stage = new Stage();
+		stage.setTitle("통계 화면");
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(primaryStage);
 		Scene scene = new Scene(checkView);
-		checkStage.setScene(scene);
-		checkStage.showAndWait();
+		stage.setScene(scene);
+		stage.showAndWait();
 
 	}
-	
-	public void stopCheckView() {
-		checkStage.close();
-	}
-	
+		
 	public static void showOrderView() throws IOException {
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(Main.class.getResource("view/CafeMenu.fxml"));
 		AnchorPane orderView = loader.load();
 
-		orderStage = new Stage();
-		orderStage.setTitle("주문 화면");
-		orderStage.initModality(Modality.WINDOW_MODAL);
-		orderStage.initOwner(primaryStage);
+		stage = new Stage();
+		stage.setTitle("주문 화면");
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(primaryStage);
 		Scene scene = new Scene(orderView);
-		orderStage.setScene(scene);
-		orderStage.showAndWait();
+		stage.setScene(scene);
+		stage.showAndWait();
 
 	}
 	
@@ -105,18 +97,14 @@ public class Main extends Application {
 		loader.setLocation(Main.class.getResource("view/PizzaMenu.fxml"));
 		AnchorPane checkView = loader.load();
 
-		checkDialogStage = new Stage();
-		checkDialogStage.setTitle("Pizza Order");
-		checkDialogStage.initModality(Modality.WINDOW_MODAL);
-		checkDialogStage.initOwner(primaryStage);
+		stage = new Stage();
+		stage.setTitle("Pizza Order");
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(primaryStage);
 		Scene scene = new Scene(checkView);
-		checkDialogStage.setScene(scene);
-		checkDialogStage.showAndWait();
+		stage.setScene(scene);
+		stage.showAndWait();
 
-	}
-	
-	public void stopPizzaMenuView() {
-		checkDialogStage.close();
 	}
 	
 	public static void showCheckStage() throws IOException {
@@ -124,13 +112,13 @@ public class Main extends Application {
 		loader.setLocation(Main.class.getResource("view/BusCheck.fxml"));
 		AnchorPane checkView = loader.load();
 
-		checkDialogStage = new Stage();
-		checkDialogStage.setTitle("Check Seat");
-		checkDialogStage.initModality(Modality.WINDOW_MODAL);
-		checkDialogStage.initOwner(primaryStage);
+		stage = new Stage();
+		stage.setTitle("Check Seat");
+		stage.initModality(Modality.WINDOW_MODAL);
+		stage.initOwner(primaryStage);
 		Scene scene = new Scene(checkView);
-		checkDialogStage.setScene(scene);
-		checkDialogStage.showAndWait();
+		stage.setScene(scene);
+		stage.showAndWait();
 
 	}
 	
